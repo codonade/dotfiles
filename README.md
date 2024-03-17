@@ -4,7 +4,7 @@ Personal configuration files for my Ubuntu setup.
 
 ## ✅ Requirements
 
-```bash
+```zsh
 sudo apt update
 sudo apt upgrade
 sudo apt install stow
@@ -12,7 +12,7 @@ sudo apt install stow
 
 ## ⬇️ Installation
 
-```bash
+```zsh
 cd ~
 git clone https://github.com/codonade/dotfiles.git .dotfiles
 stow .
