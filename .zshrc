@@ -52,7 +52,7 @@ alias md='mkdir'
 # Changes the current directory through Zoxide.
 alias cd='z'
 # Navigates up a directory.
-alias cu='z ..'
+alias cu='cd ..'
 # Lists all the directory, vertically, without `.` and `..`
 alias ll='ls -Al'
 # Deletes a directory with all of its contents, recursively.
@@ -67,15 +67,15 @@ alias gi='git init'
 alias gs='git status'
 # Stages all Git chagnes.
 alias ga='git add -A'
-# TEMP: Stages all Git changes, then commits them.
-alias gc='git add -A && cargo run'
+# Commits staged Git changes.
+alias gc='git commit'
 # Pushes a Git branch.
 alias gp='git push'
-# TEMP: Stages, commits, and pushes all Git changes.
-alias gg='git add -A && cargo run && git push'
+# Stages, commits, and pushes all Git changes.
+alias gg='ga && gc && gp'
 # WARN: Forces a Git branch push.
 alias gf='git push --force'
-# Renames the last Git commit.
+# WARN: Renames the last Git commit.
 alias gb='git rebase -i HEAD~1 && git push --force'
 # Logs all Git commits.
 alias gl='git log'
