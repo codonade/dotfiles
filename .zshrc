@@ -1,3 +1,5 @@
+# DOCS: https://gist.github.com/mgedmin/2762225 (Xterm Colors)
+
 # Loads and initializes the completion engine.
 autoload -Uz compinit
 compinit
