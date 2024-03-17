@@ -1,4 +1,3 @@
-# NOTE: Important for IDEs or Text Editors auto-completions.
 "$schema" = 'https://starship.rs/config-schema.json'
 # Doesn't insert a blank line between shell prompts.
 add_newline = false
