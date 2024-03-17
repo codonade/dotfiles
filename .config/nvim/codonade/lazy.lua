@@ -8,7 +8,8 @@ if not vim.loop.fs_stat(lazypath) then
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
-    lazypath })
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
@@ -28,7 +29,7 @@ local opts = {
   },
   installs = { colorscheme = { "tokyonight", }, },
   -- Automatically checks for plugin updates.
-  checker = { enabled = true },
+  checker = { enabled = true, },
   -- PERF: Disables some RTP plugins.
   performance = {
     rtp = {
