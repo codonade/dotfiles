@@ -1,0 +1,48 @@
+# NOTE: Important for IDEs or Text Editors auto-completions.
+"$schema" = 'https://starship.rs/config-schema.json'
+# Doesn't insert a blank line between shell prompts.
+add_newline = false
+# WARN: Only include what is specified (A.K.A. configured) below.
+format = '$username$directory$git_branch$git_status$cmd_duration'
+
+[username]
+style_root = 'fg:bright-red'
+style_user = 'fg:bright-red'
+format = '[$user ]($style)'
+show_always = true
+
+[directory]
+truncation_length = 1
+truncate_to_repo = true
+format = '[\($path\)]($style)[$read_only]($read_only_style) '
+style = 'fg:bright-green'
+read_only = '🔒'
+read_only_style = 'fg:bright-green'
+truncation_symbol = ''
+
+[git_branch]
+always_show_remote = true
+format = '[$symbol$branch]($style)[( :$remote_branch)](fg:bright-purple)'
+symbol = ':'
+style = 'fg:bright-cyan'
+
+[git_status]
+format = '$all_status '
+conflicted = ' ⚔️'
+ahead = ' 😃'
+behind = ' 😰'
+diverged = ' 😵'
+up_to_date = ' 😁'
+untracked = ' 🤨'
+stashed = ' 😴'
+modified = ' 😕'
+staged = ' 😉'
+renamed = ' 😎'
+deleted = ' 😵'
+
+[cmd_duration]
+format = "[$duration]($style) "
+min_time = 0
+show_notifications = true
+min_time_to_notify = 60000
+style = "fg:bright-black"
