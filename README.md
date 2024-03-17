@@ -10,6 +10,9 @@ sudo apt upgrade
 sudo apt install stow
 ```
 
+**NOTE:** `stow` is only used for symlinking your `$HOME` files with mine. You
+still need to `install` all the applications that I use to leverage these dotfiles.
+
 ## ⬇️ Installation
 
 ```zsh
