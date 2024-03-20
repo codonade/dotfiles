@@ -27,6 +27,10 @@ vim.opt.smartindent = true
 -- "Is this a new line, or the same one?"
 vim.opt.wrap = false
 
+-- Highlights during and after search.
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+
 -- Syncs the clipboard between OS and Neovim.
 -- HMMM: Not working in WSL2 (Ubuntu)...
 vim.opt.clipboard = "unnamedplus"
