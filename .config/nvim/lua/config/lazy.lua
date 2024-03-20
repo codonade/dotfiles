@@ -12,6 +12,8 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 -- Appends lazy.nvim to the Neovim's runtime path.
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
-require("lazy").setup({})
+-- Installs plugins defined in `plugins`
+require("lazy").setup("plugins")
