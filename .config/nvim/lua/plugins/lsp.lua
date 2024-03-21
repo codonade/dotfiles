@@ -16,7 +16,7 @@ return {{
   },
 
   -- Setups LSP plugins.
-  config = function(_, _)
+  config = function(_,_)
     -- Runs when an LSP attaches to a particular buffer.
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("LspKickstart", { clear = true, }),
@@ -56,6 +56,12 @@ return {{
       end,
     })
 
+    -- Brodcasts completion abilities into LSP servers.
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend(
+      "force", capabilities,
+      require("cmp_nvim_lsp").default_capabilities())
+
     ---`table` of LSP servers and their configurations.
     ---@type table
     local servers = {
@@ -75,6 +81,9 @@ return {{
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
+          server.capabilities = vim.tbl_deep_extend(
+            "force", {}, capabilities,
+            server.capabilities or {})
           require("lspconfig")[server_name].setup(server)
         end,
       },
