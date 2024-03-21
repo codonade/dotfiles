@@ -19,24 +19,19 @@ return {{
     "nvim-telescope/telescope-ui-select.nvim",
   },
 
-  -- Configures Telescope's options.
-  opts = {
-  },
-  
   -- Setups Telescope with configured `opts`
   config = function(_, opts)
-    local telescope = require("telescope")
-    local builtin = require("telescope.builtin")
+    local pickers = require("telescope.builtin")
     -- NOTE: Wraps `setup` here to allow for customizing keymaps.
-    telescope.setup(opts)
+    require("telescope").setup(opts)
 
     -- Configures Telescope's keymaps.
-    vim.keymap.set("n", "<Leader>fh", builtin.help_tags, { desc = "[F]ind in [H]elp", })
-    vim.keymap.set("n", "<Leader>fk", builtin.keymaps, { desc = "[F]ind in [K]eymaps", })
-    vim.keymap.set("n", "<Leader>ff", builtin.find_files, { desc = "[F]ind in [F]iles", })
-    vim.keymap.set("n", "<Leader>fw", builtin.grep_string, { desc = "[F]ind [W]ord", })
-    vim.keymap.set("n", "<Leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep", })
-    vim.keymap.set("n", "<Leader>f?", builtin.current_buffer_fuzzy_find, {
+    vim.keymap.set("n", "<Leader>fh", pickers.help_tags, { desc = "[F]ind in [H]elp", })
+    vim.keymap.set("n", "<Leader>fk", pickers.keymaps, { desc = "[F]ind in [K]eymaps", })
+    vim.keymap.set("n", "<Leader>ff", pickers.find_files, { desc = "[F]ind in [F]iles", })
+    vim.keymap.set("n", "<Leader>fw", pickers.grep_string, { desc = "[F]ind [W]ord", })
+    vim.keymap.set("n", "<Leader>fg", pickers.live_grep, { desc = "[F]ind by [G]rep", })
+    vim.keymap.set("n", "<Leader>f?", pickers.current_buffer_fuzzy_find, {
       desc = "[F]ind by Grep in Current Buffer [?]",
     })
   end,
