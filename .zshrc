@@ -67,6 +67,8 @@ alias xu='chmod +x'
 alias gi='git init'
 # Prints the current Git status.
 alias gs='git status'
+# Prints the difference.
+alias ge='git diff'
 # Stages all Git chagnes.
 alias ga='git add -A'
 # Commits staged Git changes.
