@@ -90,5 +90,5 @@ alias gr='gd && gi'
 
 # Runs a Rust Cargo environment.
 alias cr='cargo run'
-# Format Rust code with Cargo Format.
+# Formats Rust code with Cargo Format.
 alias cf='cargo fmt'
