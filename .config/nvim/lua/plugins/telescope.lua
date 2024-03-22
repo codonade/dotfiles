@@ -21,6 +21,7 @@ return {{
 
   -- Setups Telescope with configured `opts`
   config = function(_, opts)
+    ---Telescope's builtin pickers.
     local pickers = require("telescope.builtin")
     -- NOTE: Wraps `setup` here to allow for customizing keymaps.
     require("telescope").setup(opts)

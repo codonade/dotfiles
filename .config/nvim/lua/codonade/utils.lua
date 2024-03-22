@@ -1,13 +1,15 @@
 ---Collection of various, weird, and generally used utilities.
----@type table
-local Module = {}
+---@class CodonadeUtils
+local M = {}
 
 ---Returns the keys of a given `table.`
----@param tabl table
----@return table
-function Module.keys(tabl)
+---@param tabl table Table to extract keys of.
+---@return table keys Set of extracted keys.
+function M.keys(tabl)
+  ---Index of current table pair.
   ---@type integer
   local i = 0
+  ---Set of extracted keys.
   ---@type table
   local keys = {}
 
@@ -18,4 +20,4 @@ function Module.keys(tabl)
   return keys
 end
 
-return Module
+return M

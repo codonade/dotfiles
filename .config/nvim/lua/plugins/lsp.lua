@@ -1,4 +1,4 @@
-
+---@type LazyConfig
 return {{
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -6,27 +6,26 @@ return {{
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
 
-    -- Extends Neovim with notifications and LSP progress.
-    -- NOTE: `opts = {}` = `require("fidget").setup()`
-    { "j-hui/fidget.nvim", opts = {} },
-
     -- Configures Lua LSP for Neovim configuration.
     -- NOTE: `opts = {}` = `require("neodev").setup()`
     { "folke/neodev.nvim", opts = {} },
+    -- Extends Neovim with notifications and LSP progress.
+    -- NOTE: `opts = {}` = `require("fidget").setup()`
+    { "j-hui/fidget.nvim", opts = {} },
   },
 
   -- Setups LSP plugins.
   config = function(_,_)
     -- Runs when an LSP attaches to a particular buffer.
     vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("LspKickstart", { clear = true, }),
+      group = vim.api.nvim_create_augroup("CodonadeLspKickstart", { clear = true, }),
       callback = function(event)
-        ---[T]elescope's builtin [p]ickers.
+        ---[T]elescope's builtin p[ickers].
         local tickers = require("telescope.builtin")
         ---Maps a key in normal mode for the current LSP buffer.
-        ---@param keys string
-        ---@param func function
-        ---@param desc string
+        ---@param keys string Key strokes to be pressed.
+        ---@param func function Function to be executed.
+        ---@param desc string Description for Which Key.
         local function map(keys, func, desc)
           vim.keymap.set("n", keys, func, {
             buffer = event.buf,
@@ -56,7 +55,7 @@ return {{
       end,
     })
 
-    -- Brodcasts completion abilities into LSP servers.
+    ---Completion abilities brodcasted into LSP servers.
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend(
       "force", capabilities,
@@ -74,17 +73,23 @@ return {{
       -- NOTE: All the keys should be `strings`
       require("codonade.utils").keys(servers)
 
+    ---Neovim's LSP configuration.
+    local lspconfig = require("lspconfig")
     -- Automatically installs specified LSP servers.
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = servers_names,
       handlers = {
+        ---@param server_name string Server name to handle.
         function(server_name)
+          ---Server to handle, infered from `server_name.`
+          ---@type table
           local server = servers[server_name] or {}
           server.capabilities = vim.tbl_deep_extend(
             "force", {}, capabilities,
             server.capabilities or {})
-          require("lspconfig")[server_name].setup(server)
+          -- Setups `server` with configuration specified in `servers.`
+          lspconfig[server_name].setup(server)
         end,
       },
     })
