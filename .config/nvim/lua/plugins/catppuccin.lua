@@ -1,3 +1,4 @@
+---@type LazyConfig
 return {{
   "catppuccin/nvim", name = "catppuccin",
   -- Ensures Catppuccin loads before other plugins.
@@ -7,9 +8,21 @@ return {{
   opts = {
     -- `mocha` or or `frappe` or `macchiato` or `latte`
     flavour = "mocha",
-    -- Applies the terminal background.
-    transparent_background = true,
+
+    -- Mimics transparency, while letting windows and menus be colored.
+    color_overrides = {
+      mocha = {
+        -- NOTE: Coming from Microsoft's Cambell theme.
+        base = "#0C0C0C",
+      },
+    },
+
+    -- Supports additional plugins.
+    integrations = {
+      fidget = true,
+    },
   },
+
   -- Initializes Catppuccin on startup.
   init = function()
     vim.cmd.colorscheme "catppuccin"

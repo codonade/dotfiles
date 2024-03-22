@@ -8,10 +8,35 @@ return {{
 
     -- Configures Lua LSP for Neovim configuration.
     -- NOTE: `opts = {}` = `require("neodev").setup()`
-    { "folke/neodev.nvim", opts = {} },
-    -- Extends Neovim with notifications and LSP progress.
-    -- NOTE: `opts = {}` = `require("fidget").setup()`
-    { "j-hui/fidget.nvim", opts = {} },
+    { "folke/neodev.nvim", opts = {}, },
+
+    -- Extends Neovim with LSP progresses.
+    {
+      "j-hui/fidget.nvim",
+      opts = {
+        progress = {
+          display = {
+            -- Waits for 1 second before hiding the notifcation.
+            done_ttl = 1,
+            done_icon = "",
+            progress_icon = {
+              -- `. .. ...`
+              pattern = "dots_ellipsis",
+              -- HMMM:
+              period = 1,
+            },
+          },
+        },
+
+        -- WARN: Required to work with Catppuccin.
+        -- HMMM:
+        notification = {
+          window = {
+            winblend = 0,
+          },
+        },
+      },
+    },
   },
 
   -- Setups LSP plugins.
@@ -71,8 +96,8 @@ return {{
     ---LSP servers installations names.
     ---@type string[]
     local servers_names =
-      -- NOTE: All the keys should be `strings`
-      require("codonade.utils").keys(servers)
+    -- NOTE: All the keys should be `strings`
+    require("codonade.utils").keys(servers)
 
     ---Neovim's LSP configuration.
     local lspconfig = require("lspconfig")

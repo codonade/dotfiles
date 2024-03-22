@@ -1,3 +1,4 @@
+---@type LazyConfig
 return {{
   "hrsh7th/nvim-cmp",
   -- Activates the plugin in insert mode.
