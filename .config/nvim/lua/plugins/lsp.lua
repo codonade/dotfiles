@@ -65,6 +65,7 @@ return {{
     ---@type table
     local servers = {
       lua_ls = {},
+      rust_analyzer = {},
     }
 
     ---LSP servers installations names.

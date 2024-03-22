@@ -10,6 +10,8 @@ return {{
       "vim", "vimdoc", "lua",
       -- Ensures parsers for Git files.
       "gitignore", "gitcommit", "gitattributes",
+      -- Ensures parsers for low-level languages.
+      "rust",
     },
     auto_install = true,
     highlight = {
