@@ -88,11 +88,11 @@ return {{
         { name = "path", },
       },
 
-      -- WARN:
-      experimental = {
-        -- Previews the selected option.
-        ghost_text = true,
-      },
+      -- WARN: Overlaps with virtual diagnostics.
+      -- experimental = {
+      --  -- Previews the selected option.
+      --  -- ghost_text = true,
+      -- },
     })
   end,
 }}
