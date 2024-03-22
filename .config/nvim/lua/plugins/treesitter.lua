@@ -8,12 +8,13 @@ return {{
     ensure_installed = {
       -- NOTE: Obviously I don't write in these!
       "vim", "vimdoc", "lua",
+      -- Ensures parsers for configuration languages.
+      "yaml", "toml",
       -- Ensures parsers for Git files.
       "gitignore", "gitcommit", "gitattributes",
       -- Ensures parsers for low-level languages.
       "rust",
     },
-    auto_install = true,
     highlight = {
       enable = true,
       -- NOTE: Languages that rely on Vim's regex system for indentation.
