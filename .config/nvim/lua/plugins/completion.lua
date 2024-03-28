@@ -87,12 +87,13 @@ return {{
         { name = "nvim_lsp", },
         { name = "luasnip" },
         { name = "path", },
+        { name = "codeium", },
       },
 
       -- WARN: Overlaps with virtual diagnostics.
+      -- WARN: Overlaps with Codeium suggestions.
       -- experimental = {
-      --  -- Previews the selected option.
-      --  -- ghost_text = true,
+      --   ghost_text = true,
       -- },
     })
   end,
