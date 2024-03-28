@@ -63,6 +63,9 @@ alias rd='rm -rf'
 # Marks a file (usually a script) as executable.
 alias xu='chmod +x'
 
+# Launches Neovim text editor.
+alias nv='nvim'
+
 # Initializes a new Git repository.
 alias gi='git init'
 # Prints the current Git status.
