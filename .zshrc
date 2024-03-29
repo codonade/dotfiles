@@ -95,3 +95,5 @@ alias gr='gd && gi'
 alias cr='cargo run'
 # Formats Rust code with Cargo Format.
 alias cf='cargo fmt'
+# Compiles Rust documentation.
+alias co='cargo doc'
