@@ -91,6 +91,8 @@ alias gd='rd .git'
 # Resets the Git history.
 alias gr='gd && gi'
 
+# Builds a Rust Cargo environment.
+alias cb='cargo build'
 # Runs a Rust Cargo environment.
 alias cr='cargo run'
 # Formats Rust code with Cargo Format.
