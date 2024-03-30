@@ -2,6 +2,15 @@
 vim.g.mapleader = " "
 vim.g.mapleaderlocal = " "
 
+-- Goes to the end of the line.
+vim.keymap.set("n", "E", "$")
+-- Highlights to the end of the line.
+vim.keymap.set("n", "<C-E>", "v$")
+-- Goes to the beginning of the line.
+vim.keymap.set("n", "B", "^")
+-- Highlights to the beginning of the line.
+vim.keymap.set("n", "<C-B>", "v^")
+
 -- Selects the whole file.
 vim.keymap.set("n", "<C-a>", "ggVG$h")
 -- Indents the whole file.
