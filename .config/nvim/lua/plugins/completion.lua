@@ -49,17 +49,17 @@ return {{
 
       -- Configures keymaps for completion buffers.
       mapping = cmp.mapping.preset.insert {
-        -- <Ctrl-Space> Manually triggers completion.
+        -- Manually triggers completion.
         ["<C-Space>"] = cmp.mapping.complete({}),
 
-        -- <Ctrl> Select the [n]ext item
+        -- Select the next item
         ["<C-n>"] = cmp.mapping.select_next_item(),
-        -- <Ctrl> Select the [p]revious item
+        -- Select the previous item
         ["<C-p>"] = cmp.mapping.select_prev_item(),
 
-        -- <Ctrl> Scroll the documentation window [b]ack.
+        -- Scroll the documentation window back.
         ["<C-b>"] = cmp.mapping.scroll_docs(-1),
-        -- <Ctrl> Scroll the documentation window [f]orward.
+        -- Scroll the documentation window forward.
         ["<C-f>"] = cmp.mapping.scroll_docs(01),
 
         -- Navigates through snippets blocks.
@@ -75,7 +75,7 @@ return {{
           end
         end, { "i", "s", }),
 
-        -- <Enter> Accepts the selected completion.
+        -- Accepts the selected completion.
         -- NOTE: Auto-imports if LSP supports it.
         -- NOTE: Expands snippets if LSP sent a snippet.
         ["<Enter>"] = cmp.mapping.confirm({ select = true, }),
