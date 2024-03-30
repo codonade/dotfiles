@@ -16,8 +16,8 @@ return {{
       opts = {
         progress = {
           display = {
-            -- Waits for 1 second before hiding the notifcation.
-            done_ttl = 1,
+            -- Waits for 3 seconds before hiding the notifcation.
+            done_ttl = 3,
             done_icon = "",
             progress_icon = {
               -- `. .. ...`
