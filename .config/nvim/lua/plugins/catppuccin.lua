@@ -22,16 +22,6 @@ return {{
     },
   },
 
-  -- Setups Catppuccin with configured `opts`.
-  config = function(_, opts)
-    require("catppuccin").setup(opts)
-    -- Highlights Codeium suggestions.
-    vim.api.nvim_set_hl(0, "CodeiumSuggestion", {
-      -- TODO: Alter the style a little bit.
-      link = "Comment",
-    })
-  end,
-
   -- Initializes Catppuccin on startup.
   init = function()
     vim.cmd.colorscheme "catppuccin"

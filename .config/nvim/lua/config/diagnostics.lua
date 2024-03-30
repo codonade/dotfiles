@@ -1,7 +1,8 @@
 vim.diagnostic.config({
-  -- Disables floating diagnostics.
-  -- NOTE: Overalps with Codeium suggestions.
-  virtual_text = false,
+  virtual_text = {
+    -- Sets spacing between text and diagnostic to its minimum.
+    spacing = 0,
+  },
 })
 
 -- Displays LSP diagnostics while inserting.
