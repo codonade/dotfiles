@@ -9,7 +9,7 @@ return {{
       -- NOTE: Obviously I don't write in these!
       "vim", "vimdoc", "lua",
       -- Ensures parsers for configuration languages.
-      "yaml", "toml",
+      "bash", "tmux", "yaml", "toml",
       -- Ensures parsers for Git files.
       "gitignore", "gitcommit", "gitattributes",
       -- Ensures parsers for low-level languages.
