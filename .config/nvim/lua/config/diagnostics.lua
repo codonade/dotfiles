@@ -3,6 +3,8 @@ vim.diagnostic.config({
     -- Sets spacing between text and diagnostic to its minimum.
     spacing = 0,
   },
+  -- Sorts diagnostics based on severity.
+  severity_sort = true,
 })
 
 -- Displays LSP diagnostics while inserting.
