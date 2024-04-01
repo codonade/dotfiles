@@ -2,6 +2,15 @@
 vim.g.mapleader = " "
 vim.g.mapleaderlocal = " "
 
+-- Navigates through buffers.
+vim.keymap.set("n", "<Tab>", ":bnext<Return>")
+-- HMMM: What Neovim used `previous` hear, not `prev`?
+vim.keymap.set("n", "<S-Tab>", ":bprevious<Return>")
+-- Delets the current buffer.
+vim.keymap.set("n", "<Leader>bd", ":bd<Return>", {
+  desc = "[B]uffer: [D]elete",
+})
+
 -- Goes to the end of the line.
 vim.keymap.set("n", "E", "$")
 -- Highlights to the end of the line.

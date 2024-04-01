@@ -54,7 +54,13 @@ return {{
         local function map(keys, func, desc)
           vim.keymap.set("n", keys, func, {
             buffer = event.buf,
-            desc = "LSP: " .. desc,
+            desc = (function()
+              if desc then
+                return "LSP: " .. desc
+              else
+                return ""
+              end
+            end)(),
           })
         end
 
@@ -74,7 +80,7 @@ return {{
         -- Executes a code action for the current symbol.
         map("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
         -- Opens a documentation popup about the current symbol.
-        map("<Leader>hd", vim.lsp.buf.hover, "[H]over [D]ocumenation")
+        map("K", vim.lsp.buf.hover)
         -- WARN: This is *not* Goto Definitions, it's Goto Declaration.
         map("<Leader>gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
       end,

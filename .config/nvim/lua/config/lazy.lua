@@ -18,4 +18,4 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- Installs plugins defined in `plugins`
 require("lazy").setup("plugins")
 -- Opens lazy.nvim dashboard.
-vim.keymap.set("n", "<Leader>ll", ":Lazy<Enter>")
+vim.keymap.set("n", "<Leader>ll", ":Lazy<Return>")

@@ -78,7 +78,7 @@ return {{
         -- Accepts the selected completion.
         -- NOTE: Auto-imports if LSP supports it.
         -- NOTE: Expands snippets if LSP sent a snippet.
-        ["<Enter>"] = cmp.mapping.confirm({ select = true, }),
+        ["<Return>"] = cmp.mapping.confirm({ select = true, }),
       },
 
       -- Where do the completion options come from?
