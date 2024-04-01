@@ -3,9 +3,13 @@ vim.g.mapleader = " "
 vim.g.mapleaderlocal = " "
 
 -- Navigates through buffers.
-vim.keymap.set("n", "<Tab>", ":bnext<Return>")
--- HMMM: What Neovim used `previous` hear, not `prev`?
-vim.keymap.set("n", "<S-Tab>", ":bprevious<Return>")
+vim.keymap.set("n", "<Leader><Tab>", ":bnext<Return>", {
+  desc = "<Tab> Goto Next Buffer",
+})
+-- HMMM: Why Neovim used `previous` hear, not `prev`?
+vim.keymap.set("n", "<Leader><S-Tab>", ":bprevious<Return>", {
+  desc = "<S-Tab> Goto Prev Buffer",
+})
 -- Delets the current buffer.
 vim.keymap.set("n", "<Leader>bd", ":bd<Return>", {
   desc = "[B]uffer: [D]elete",
@@ -23,7 +27,7 @@ vim.keymap.set("n", "<C-B>", "v^")
 -- Selects the whole file.
 vim.keymap.set("n", "<C-a>", "ggVG$h")
 -- Indents the whole file.
-vim.keymap.set("n", "<C-i>", "ggVG$h=G$")
+vim.keymap.set("n", "<C-i>", "ggV=G$")
 
 -- Re-does a previous action.
 vim.keymap.set("n", "U", ":redo<Return>")

@@ -31,6 +31,7 @@ return {{
     vim.keymap.set("n", "<Leader>fh", pickers.help_tags, { desc = "[F]ind in [H]elp", })
     vim.keymap.set("n", "<Leader>fk", pickers.keymaps, { desc = "[F]ind in [K]eymaps", })
     vim.keymap.set("n", "<Leader>ff", pickers.find_files, { desc = "[F]ind in [F]iles", })
+    vim.keymap.set("n", "<Leader><Leader>", pickers.buffers, { desc = "<Leader> Find in Buffers" })
     vim.keymap.set("n", "<Leader>fw", pickers.grep_string, { desc = "[F]ind [W]ord", })
     vim.keymap.set("n", "<Leader>fg", pickers.live_grep, { desc = "[F]ind by [G]rep", })
     vim.keymap.set("n", "<Leader>f?", pickers.current_buffer_fuzzy_find, {
