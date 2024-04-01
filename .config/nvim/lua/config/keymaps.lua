@@ -25,6 +25,10 @@ vim.keymap.set("n", "<C-a>", "ggVG$h")
 -- Indents the whole file.
 vim.keymap.set("n", "<C-i>", "ggVG$h=G$")
 
+-- Re-does a previous action.
+vim.keymap.set("n", "U", ":redo<Return>")
+vim.keymap.set("n", "<C-r>", "<Nop>")
+
 -- Removes search highlights.
 vim.keymap.set("n", "<Esc>", ":nohlsearch<Return>")
 -- Navigates through search results.
