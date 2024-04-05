@@ -21,7 +21,7 @@ return {{
       fidget = true,
       mini = {
         enabled = true,
-        indentscope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+        indentscope_color = "",
       },
     },
   },

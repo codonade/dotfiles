@@ -117,13 +117,13 @@ return {{
       handlers = {
         ---@param server_name string Server name to handle.
         function(server_name)
-          ---Server to handle, infered from `server_name.`
+          ---Server to handle, infered from `server_name`
           ---@type table
           local server = servers[server_name] or {}
           server.capabilities = vim.tbl_deep_extend(
             "force", {}, capabilities,
             server.capabilities or {})
-          -- Setups `server` with configuration specified in `servers.`
+          -- Setups `server` with configuration specified in `servers`
           lspconfig[server_name].setup(server)
         end,
       },

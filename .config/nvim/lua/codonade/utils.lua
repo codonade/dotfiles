@@ -2,7 +2,7 @@
 ---@class CodonadeUtils
 local M = {}
 
----Returns the keys of a given `table.`
+---Returns the keys of a given `table`
 ---@param tabl table Table to extract keys of.
 ---@return table keys Set of extracted keys.
 function M.keys(tabl)
