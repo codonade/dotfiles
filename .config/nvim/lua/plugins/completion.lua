@@ -26,6 +26,9 @@ return {{
     "hrsh7th/cmp-path",
     -- Autocompletes buffer words.
     "hrsh7th/cmp-buffer",
+    -- Adds VSC-like pictograms for completion items.
+    -- TODO: Configure highlights to match code.
+    "onsails/lspkind.nvim",
   },
 
   -- Setups completion plugins.
@@ -34,6 +37,8 @@ return {{
     local cmp = require("cmp")
     ---Community standard "snipping" plugin.
     local luasnip = require("luasnip")
+    ---VSC-like pictograms for completion items.
+    local lspkind = require("lspkind")
 
     luasnip.config.setup({})
     cmp.setup({
@@ -44,22 +49,23 @@ return {{
         end,
       },
 
-      -- DOCS: `:help 'completeopt'`
-      completion = { completeopt = "menu,menuone,noinsert", },
+      completion = {
+        -- DOCS: `:help 'completeopt'`
+        completeopt = "menu,menuone,noinsert",
+      },
 
       -- Configures keymaps for completion buffers.
       mapping = cmp.mapping.preset.insert {
         -- Manually triggers completion.
         ["<C-Space>"] = cmp.mapping.complete({}),
 
-        -- Select the next item
+        -- Selects the next item.
         ["<C-n>"] = cmp.mapping.select_next_item(),
-        -- Select the previous item
+        -- Selects the previous item.
         ["<C-p>"] = cmp.mapping.select_prev_item(),
-
-        -- Scroll the documentation window back.
+        -- Scrolls the documentation window back.
         ["<C-b>"] = cmp.mapping.scroll_docs(-1),
-        -- Scroll the documentation window forward.
+        -- Scrolls the documentation window forward.
         ["<C-f>"] = cmp.mapping.scroll_docs(01),
 
         -- Navigates through snippets blocks.
@@ -87,6 +93,13 @@ return {{
         { name = "nvim_lsp", },
         { name = "luasnip" },
         { name = "path", },
+      },
+
+      -- Configures completion items formatting.
+      formatting = {
+        fields = { "abbr", "kind", "menu", },
+        expandable_indicator = true,
+        format = lspkind.cmp_format(),
       },
 
       -- WARN: Overlaps with virtual diagnostics.
