@@ -19,6 +19,10 @@ return {{
     -- Supports additional plugins.
     integrations = {
       fidget = true,
+      mini = {
+        enabled = true,
+        indentscope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+      },
     },
   },
 

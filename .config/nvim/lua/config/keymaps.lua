@@ -27,7 +27,7 @@ vim.keymap.set("n", "<C-B>", "v^")
 -- Selects the whole file.
 vim.keymap.set("n", "<C-a>", "ggVG$h")
 -- Indents the whole file.
-vim.keymap.set("n", "<C-i>", "ggV=G$")
+vim.keymap.set("n", "<C-i>", "ggVG=G$")
 
 -- Re-does a previous action.
 vim.keymap.set("n", "U", ":redo<Return>")
