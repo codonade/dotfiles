@@ -1,3 +1,5 @@
+-- Configures Neovim's core autocmds.
+require("config.autocmds")
 -- Configures Neovim's core keymaps.
 require("config.keymaps")
 -- Configures Neovim's core options.
