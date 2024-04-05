@@ -43,7 +43,10 @@ return {{
   config = function(_,_)
     -- Runs when an LSP attaches to a particular buffer.
     vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("CodonadeLspKickstart", { clear = true, }),
+      group = vim.api.nvim_create_augroup("CodonadeLspKickstart", {
+        -- Resets commands when reloading.
+        clear = true,
+      }),
       callback = function(event)
         ---[T]elescope's builtin p[ickers].
         local tickers = require("telescope.builtin")
