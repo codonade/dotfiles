@@ -10,6 +10,18 @@ return {
       highlights = require("catppuccin.groups.integrations.bufferline").get({
         -- Disables special styles (defaults are "bold" and "italic")
         styles = {},
+
+        -- Matches colors with statusline colors.
+        custom = {
+          mocha = {
+            fill = { bg = "#181825", },
+            background = { bg = "#181825", },
+            buffer_visible = { bg = "#181825", },
+            close_button = { bg = "#181825", },
+            close_button_visible = { bg = "#181825", },
+            -- HMMM: How to exactly color separators?
+          },
+        },
       }),
     },
   },
