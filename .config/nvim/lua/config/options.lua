@@ -8,6 +8,11 @@ vim.opt.guicursor = ""
 -- Hides Vim modes display.
 vim.opt.showmode = false
 
+-- Splits horizontally below.
+vim.opt.splitbelow = true
+-- Splits vertically to the right.
+vim.opt.splitright = true
+
 -- Displays absolute line numbers.
 vim.opt.number = true
 -- NOTE: `true` for relative lines.

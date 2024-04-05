@@ -2,6 +2,33 @@
 vim.g.mapleader = " "
 vim.g.mapleaderlocal = " "
 
+-- Splits horizontally (above or below).
+vim.keymap.set("n", "<Leader>sh", "<C-w>s", {
+  desc = "[S]plit: [H]orizontally",
+})
+-- Splits vertically (left or right).
+vim.keymap.set("n", "<Leader>sv", "<C-w>v", {
+  desc = "[S]plit: [V]ertically",
+})
+
+-- Goes to the split above.
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+-- Goes to the split below.
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+-- Goes to the left split.
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+-- Goes to the right split.
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+-- Closes the current split.
+vim.keymap.set("n", "<Leader>sq", "<C-w>c", {
+  desc = "[S]plit: [Q]uit",
+})
+-- Closes all other splits.
+vim.keymap.set("n", "<Leader>sa", "<C-w>o", {
+  desc = "[S]plit: Quit [A]ll",
+})
+
 -- Navigates through buffers.
 vim.keymap.set("n", "<Leader><Tab>", ":bnext<Return>", {
   desc = "<Tab> Goto Next Buffer",
