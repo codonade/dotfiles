@@ -1,3 +1,6 @@
+-- Imports CodonadeKeymap.
+local nap = require("codonade.keymap").nap
+
 ---@type LazyConfig
 return {{
   "neovim/nvim-lspconfig",
@@ -48,68 +51,64 @@ return {{
         clear = true,
       }),
       callback = function(event)
-        ---[T]elescope's builtin p[ickers].
         local tickers = require("telescope.builtin")
         ---Maps a key in normal mode for the current LSP buffer.
-        ---@param keys string Key strokes to be pressed.
-        ---@param func function Function to be executed.
-        ---@param desc string Description for Which Key.
+        ---@param keys string Keys sequence to be pressed.
+        ---@param func function Action to be executed.
+        ---@param desc string Description of the keymap.
         local function map(keys, func, desc)
-          vim.keymap.set("n", keys, func, {
-            buffer = event.buf,
-            desc = (function()
-              if desc then
-                return "LSP: " .. desc
-              else
-                return ""
-              end
-            end)(),
-          })
+          nap(keys, func, (function()
+            if desc then
+              return "LSP: " .. desc
+            else
+              return ""
+            end
+          end)(), {
+              buffer = event.buf,
+            })
         end
 
         -- Fuzzy find all the symbols in the current document.
-        map("<Leader>g?", tickers.lsp_document_symbols, "[G]oto Symbol [?]")
+        map("<Leader>g?", tickers.lsp_document_symbols, "Goto Symbol")
         -- Goes to where a variable was first declared, a function is defined, etc...
-        map("<Leader>gd", tickers.lsp_definitions, "[G]oto [D]efinitions")
+        map("<Leader>gd", tickers.lsp_definitions, "Goto Definitions")
         -- Finds implementations of the current symbol.
-        map("<Leader>gi", tickers.lsp_implementations, "[G]oto [I]mplementations")
+        map("<Leader>gi", tickers.lsp_implementations, "Goto Implementations")
         -- Finds references for the current symbol.
-        map("<Leader>gr", tickers.lsp_references, "[G]oto [R]eferences")
+        map("<Leader>gr", tickers.lsp_references, "Goto References")
         -- Jumps to the type of the current symbol.
-        map("<Leader>gt", tickers.lsp_type_definitions, "[G]oto [T]ype")
+        map("<Leader>gt", tickers.lsp_type_definitions, "Goto Type")
 
         -- Renames the current symbol.
-        map("<Leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+        map("<Leader>rn", vim.lsp.buf.rename, "Rename")
         -- Executes a code action for the current symbol.
-        map("<Leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+        map("<Leader>ca", vim.lsp.buf.code_action, "Code Action")
         -- Opens a documentation popup about the current symbol.
-        map("K", vim.lsp.buf.hover)
+        map("K", vim.lsp.buf.hover, "Hover")
         -- WARN: This is *not* Goto Definitions, it's Goto Declaration.
-        map("<Leader>gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+        map("<Leader>gD", vim.lsp.buf.declaration, "Goto Declaration")
       end,
     })
 
-    ---Completion abilities brodcasted into LSP servers.
+    -- Brodcasts completion abilities into LSP servers.
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend(
       "force", capabilities,
       require("cmp_nvim_lsp").default_capabilities())
 
-    ---`table` of LSP servers and their configurations.
     ---@type table
     local servers = {
       lua_ls = {},
       rust_analyzer = {},
     }
 
-    ---LSP servers installations names.
     ---@type string[]
     local servers_names =
-    -- NOTE: All the keys should be `strings`
-    require("codonade.utils").keys(servers)
-
-    ---Neovim's LSP configuration.
+      -- NOTE: All the keys should be `strings`
+      require("codonade.utils").keys(servers)
+    ---@type lspconfig.Config
     local lspconfig = require("lspconfig")
+
     -- Automatically installs specified LSP servers.
     require("mason").setup()
     require("mason-lspconfig").setup({
@@ -117,9 +116,10 @@ return {{
       handlers = {
         ---@param server_name string Server name to handle.
         function(server_name)
-          ---Server to handle, infered from `server_name`
           ---@type table
-          local server = servers[server_name] or {}
+          local server =
+            servers[server_name] or {}
+
           server.capabilities = vim.tbl_deep_extend(
             "force", {}, capabilities,
             server.capabilities or {})

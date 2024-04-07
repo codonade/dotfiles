@@ -33,11 +33,8 @@ return {{
 
   -- Setups completion plugins.
   config = function(_,_)
-    ---Community standard completion plugin.
     local cmp = require("cmp")
-    ---Community standard "snipping" plugin.
     local luasnip = require("luasnip")
-    ---VSC-like pictograms for completion items.
     local lspkind = require("lspkind")
 
     luasnip.config.setup({})

@@ -1,3 +1,6 @@
+-- Imports CodonadeKeymap.
+local nap = require("codonade.keymap").nap
+
 ---@type LazyConfig
 return {{
   "nvim-telescope/telescope.nvim", branch = "0.1.x",
@@ -22,20 +25,17 @@ return {{
 
   -- Setups Telescope with configured `opts`
   config = function(_, opts)
-    ---Telescope's builtin pickers.
     local pickers = require("telescope.builtin")
     -- NOTE: Wraps `setup` here to allow for customizing keymaps.
     require("telescope").setup(opts)
 
     -- Configures Telescope's keymaps.
-    vim.keymap.set("n", "<Leader>fh", pickers.help_tags, { desc = "[F]ind in [H]elp", })
-    vim.keymap.set("n", "<Leader>fk", pickers.keymaps, { desc = "[F]ind in [K]eymaps", })
-    vim.keymap.set("n", "<Leader>ff", pickers.find_files, { desc = "[F]ind in [F]iles", })
-    vim.keymap.set("n", "<Leader><Leader>", pickers.buffers, { desc = "<Leader> Find in Buffers" })
-    vim.keymap.set("n", "<Leader>fw", pickers.grep_string, { desc = "[F]ind [W]ord", })
-    vim.keymap.set("n", "<Leader>fg", pickers.live_grep, { desc = "[F]ind by [G]rep", })
-    vim.keymap.set("n", "<Leader>f?", pickers.current_buffer_fuzzy_find, {
-      desc = "[F]ind by Grep in Current Buffer [?]",
-    })
+    nap("<Leader>fh", pickers.help_tags, "Find: Help")
+    nap("<Leader>fk", pickers.keymaps, "Find: Keymaps")
+    nap("<Leader>ff", pickers.find_files, "Find: Files")
+    nap("<Leader><Leader>", pickers.buffers, "Find: Buffers")
+    nap("<Leader>fw", pickers.grep_string, "Find: Word")
+    nap("<Leader>fg", pickers.live_grep, "Find: Search")
+    nap("<Leader>f?", pickers.current_buffer_fuzzy_find, "Find: Search (Buffer)")
   end,
 }}

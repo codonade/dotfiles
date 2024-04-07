@@ -1,80 +1,66 @@
+-- Imports CodonadeKeymap.
+local nap = require("codonade.keymap").nap
 -- Sets <Leader> key to <Space>
 vim.g.mapleader = " "
 vim.g.mapleaderlocal = " "
 
 -- Splits horizontally (above or below).
-vim.keymap.set("n", "<Leader>sh", "<C-w>s", {
-  desc = "[S]plit: [H]orizontally",
-})
+nap("<Leader>sh", "<C-w>s", "Split: Horizontal")
 -- Splits vertically (left or right).
-vim.keymap.set("n", "<Leader>sv", "<C-w>v", {
-  desc = "[S]plit: [V]ertically",
-})
+nap("<Leader>sv", "<C-w>v", "Split: Verticallly")
 
 -- Goes to the split above.
-vim.keymap.set("n", "<C-k>", "<C-w>k")
+nap("<C-k>", "<C-w>k", "Split: Go Above")
 -- Goes to the split below.
-vim.keymap.set("n", "<C-j>", "<C-w>j")
+nap("<C-j>", "<C-w>j", "Split: Go Below")
 -- Goes to the left split.
-vim.keymap.set("n", "<C-h>", "<C-w>h")
+nap("<C-h>", "<C-w>h", "Split: Go Left")
 -- Goes to the right split.
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+nap("<C-l>", "<C-w>l", "Split: Go Right")
 
 -- Closes the current split.
-vim.keymap.set("n", "<Leader>sq", "<C-w>c", {
-  desc = "[S]plit: [Q]uit",
-})
+nap("<Leader>sq", "<C-w>c", "Split: Quit")
 -- Closes all other splits.
-vim.keymap.set("n", "<Leader>sa", "<C-w>o", {
-  desc = "[S]plit: Quit [A]ll",
-})
+nap("<Leader>sa", "<C-w>o", "Split: Quit All")
 
 -- Navigates through buffers.
-vim.keymap.set("n", "<Leader><Tab>", ":bnext<Return>", {
-  desc = "<Tab> Goto Next Buffer",
-})
+nap("<Leader><Tab>", ":bnext<Return>", "Buffer: Next")
 -- HMMM: Why Neovim used `previous` hear, not `prev`?
-vim.keymap.set("n", "<Leader><S-Tab>", ":bprevious<Return>", {
-  desc = "<S-Tab> Goto Prev Buffer",
-})
+nap("<Leader><S-Tab>", ":bprevious<Return>", "Buffer: Prev")
 
 -- Delets the current buffer.
-vim.keymap.set("n", "<Leader>bd", ":bd<Return>", {
-  desc = "[B]uffer: [D]elete",
-})
+nap("<Leader>bd", ":bd<Return>", "Buffer: Delete")
 
 -- Goes to the end of the line.
-vim.keymap.set("n", "E", "$")
+nap("E", "$", "Line: Goto End")
 -- Highlights to the end of the line.
-vim.keymap.set("n", "<C-E>", "v$")
--- Goes to the beginning of the line.
-vim.keymap.set("n", "B", "^")
--- Highlights to the beginning of the line.
-vim.keymap.set("n", "<C-B>", "v^")
+nap("<C-E>", "v$", "Line: Select to End")
+-- Goes to the start of the line.
+nap("B", "^", "Line: Goto Start")
+-- Highlights to the start of the line.
+nap("<C-B>", "v^", "Line: Select to Start")
 
 -- Moves current line above, and indents it.
-vim.keymap.set("n", "<A-j>", ":m .+1<Return>==", { desc = "Move Down" })
+nap("<A-j>", ":m .+1<Return>==", "Line: Move down" )
 -- Moves current line below, and indents it.
-vim.keymap.set("n", "<A-k>", ":m .-2<Return>==", { desc = "Move Up" })
+nap("<A-k>", ":m .-2<Return>==", "Line: Move up")
 
 -- Selects the whole file.
-vim.keymap.set("n", "<C-a>", "ggVG$h")
+nap("<C-a>", "ggVG$h", "File: Select")
 -- Indents the whole file.
-vim.keymap.set("n", "<C-i>", "ggVG=G$")
+nap("<C-i>", "ggVG=G$", "File: Indent")
 
 -- Re-does a previous action.
-vim.keymap.set("n", "U", ":redo<Return>")
+nap("U", ":redo<Return>", "Redo")
 -- WARN: Deletes <C-r> keymap.
-vim.keymap.set("n", "<C-r>", "<Nop>")
+nap("<C-r>", "<Nop>", "")
 
--- Removes search highlights.
-vim.keymap.set("n", "<Esc>", ":nohlsearch<Return>")
 -- Navigates through search results.
-vim.keymap.set("n", "n", "N")
-vim.keymap.set("n", "N", "n")
+nap("n", "N", "Result: Next")
+nap("N", "n", "Result: Prev")
 
 -- Displays LSP diagnostics for current line.
-vim.keymap.set("n", "D", vim.diagnostic.open_float)
+nap("D", vim.diagnostic.open_float, "Line: Diagnostics")
 -- Navigates through LSP diagnostics.
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+nap("]d", vim.diagnostic.goto_next, "Diagnostics: Next")
+nap("[d", vim.diagnostic.goto_prev, "Diagnostics: Prev")

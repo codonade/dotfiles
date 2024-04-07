@@ -6,10 +6,8 @@ local M = {}
 ---@param tabl table Table to extract keys of.
 ---@return table keys Set of extracted keys.
 function M.keys(tabl)
-  ---Index of current table pair.
   ---@type integer
   local i = 0
-  ---Set of extracted keys.
   ---@type table
   local keys = {}
 
@@ -18,6 +16,22 @@ function M.keys(tabl)
     keys[i] = k
   end
   return keys
+end
+
+---Returns the values of a given `table`
+---@param tabl table Table to extract values of.
+---@return table vals Set of extracted values.
+function M.vals(tabl)
+  ---@type integer
+  local i = 0
+  ---@type table
+  local vals = {}
+
+  for _,v in pairs(tabl) do
+    i = i+1
+    vals[i] = v
+  end
+  return vals
 end
 
 return M
