@@ -37,6 +37,7 @@ vim.keymap.set("n", "<Leader><Tab>", ":bnext<Return>", {
 vim.keymap.set("n", "<Leader><S-Tab>", ":bprevious<Return>", {
   desc = "<S-Tab> Goto Prev Buffer",
 })
+
 -- Delets the current buffer.
 vim.keymap.set("n", "<Leader>bd", ":bd<Return>", {
   desc = "[B]uffer: [D]elete",
@@ -51,6 +52,11 @@ vim.keymap.set("n", "B", "^")
 -- Highlights to the beginning of the line.
 vim.keymap.set("n", "<C-B>", "v^")
 
+-- Moves current line above, and indents it.
+vim.keymap.set("n", "<A-j>", ":m .+1<Return>==", { desc = "Move Down" })
+-- Moves current line below, and indents it.
+vim.keymap.set("n", "<A-k>", ":m .-2<Return>==", { desc = "Move Up" })
+
 -- Selects the whole file.
 vim.keymap.set("n", "<C-a>", "ggVG$h")
 -- Indents the whole file.
@@ -58,6 +64,7 @@ vim.keymap.set("n", "<C-i>", "ggVG=G$")
 
 -- Re-does a previous action.
 vim.keymap.set("n", "U", ":redo<Return>")
+-- WARN: Deletes <C-r> keymap.
 vim.keymap.set("n", "<C-r>", "<Nop>")
 
 -- Removes search highlights.
