@@ -32,6 +32,9 @@ vim.opt.smartindent = true
 -- "Is this a new line, or the same one?"
 vim.opt.wrap = false
 
+-- Caps the maximum length for `popupmenu`
+vim.opt.pumheight = 10
+
 -- Highlights during and after search.
 vim.opt.hlsearch = true
 vim.opt.incsearch = true

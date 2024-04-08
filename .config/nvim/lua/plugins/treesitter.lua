@@ -13,7 +13,7 @@ return {{
       -- Ensures parsers for Git files.
       "gitignore", "gitcommit", "gitattributes",
       -- Ensures parsers for low-level languages.
-      "rust",
+      "rust", "c", "cpp",
     },
     highlight = {
       enable = true,

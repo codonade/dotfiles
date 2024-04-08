@@ -100,6 +100,7 @@ return {{
     local servers = {
       lua_ls = {},
       rust_analyzer = {},
+      clangd = {},
     }
 
     ---@type string[]
