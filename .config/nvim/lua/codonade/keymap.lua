@@ -19,12 +19,16 @@ end
 ---@param opts table|nil Additional keymapping options.
 function M.map(mode, keys, func, desc, opts)
   opts = opts or {}
-  vim.keymap.set(mode, keys, func, {
-    desc = desc or "",
-    silent = opts.silent or true,
-    noremap = (not opts.remap) or true,
-    buffer = opts.buffer,
-  })
+
+  -- Maps the same sequence of keys for every specified mode.
+  _ = mode:gsub(".", function(m)
+    vim.keymap.set(m, keys, func, {
+      desc = desc or "",
+      silent = opts.silent or true,
+      noremap = (not opts.remap) or true,
+      buffer = opts.buffer,
+    })
+  end)
 end
 
 return M
