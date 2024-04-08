@@ -34,13 +34,11 @@ nap("<Leader><S-Tab>", ":bprevious<Return>", "Buffer: Prev")
 nap("<Leader>bd", ":bd<Return>", "Buffer: Delete")
 
 -- Goes to the end of the line.
-nap("E", "$", "Line: Goto End")
--- Highlights to the end of the line.
-nap("<C-E>", "v$", "Line: Select to End")
+map("n", "E", "$", "Line: Goto End")
+-- Selects to the end of the line.
+map("x", "E", "$h", "Selection: Goto Line End")
 -- Goes to the start of the line.
-nap("B", "^", "Line: Goto Start")
--- Highlights to the start of the line.
-nap("<C-B>", "v^", "Line: Select to Start")
+map("nx", "B", "^", "Line: Goto Start")
 
 -- Moves current line above, and indents it.
 nap("<A-j>", ":m .+1<Return>==", "Line: Move down" )
