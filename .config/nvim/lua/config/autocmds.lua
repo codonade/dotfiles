@@ -10,13 +10,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+local indent_group = vim.api.nvim_create_augroup("CodonadeIndent", {
+  -- Resets commands when reloading.
+  clear = true,
+})
+
 -- Overrides indentation for C files.
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = { "*.c", "*.h", },
-  group = vim.api.nvim_create_augroup("CodonadeIndent", {
-    -- Resets commands when reloading.
-    clear = true,
-  }),
+  group = indent_group,
   callback = function()
     vim.opt.tabstop = 4
     vim.opt.softtabstop = 4
@@ -27,10 +29,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- Restores original indentation.
 vim.api.nvim_create_autocmd("BufLeave", {
   pattern = { "*.c", "*.h", },
-  group = vim.api.nvim_create_augroup("CodonadeIndent", {
-    -- Resets commands when reloading.
-    clear = true,
-  }),
+  group = indent_group,
   callback = function()
     vim.opt.tabstop = 2
     vim.opt.softtabstop = 2
