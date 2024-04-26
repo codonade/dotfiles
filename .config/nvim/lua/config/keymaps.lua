@@ -74,7 +74,7 @@ map("nx", "<Leader>s", '"_s', "Character: Crop (_)")
 -- Selects the whole file.
 nap("<C-a>", "ggVG$h", "File: Select")
 -- Indents the whole file.
-nap("<C-i>", "ggVG=G$", "File: Indent")
+nap("<C-i>", ":mark a<Return> ggVG=G$'a:delmark a<Return>", "File: Indent")
 
 -- Re-does a previous action.
 nap("U", ":redo<Return>", "Redo")
