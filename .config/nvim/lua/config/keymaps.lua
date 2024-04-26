@@ -33,10 +33,15 @@ nap("<Leader><S-Tab>", ":bprevious<Return>", "Buffer: Prev")
 -- Delets the current buffer.
 nap("<Leader>bd", ":bd<Return>", "Buffer: Delete")
 
+-- Increments current number.
+map("nx", "+", "<C-a>", "Number: Increment");
+-- Decrements current number.
+map("nx", "-", "<C-x>", "Number: Decrement");
+
 -- Goes to the end of the line.
-map("n", "E", "$", "Line: Goto End")
+nap("E", "$", "Line: Goto End")
 -- Selects to the end of the line.
-map("x", "E", "$h", "Selection: Goto Line End")
+vap("E", "$h", "Selection: Goto Line End")
 -- Goes to the start of the line.
 map("nx", "B", "^", "Line: Goto Start")
 
