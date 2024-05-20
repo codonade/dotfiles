@@ -49,6 +49,10 @@ eval "$(starship init zsh)"
 # Zoxide: A smarter cd command.
 eval "$(zoxide init zsh)"
 
+# FNM: Fast and simple Node.js version manager, built in Rust.
+export PATH="/home/codonade/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
 # Creates a directory.
 alias md='mkdir'
 # Changes the current directory through Zoxide.
