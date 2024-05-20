@@ -107,9 +107,9 @@ alias co='cargo doc'
 alias bl='bun upgrade'
 # Auto-installs and runs JS packages.
 alias bx='bunx'
-# Speed-installs Node.js modules.
+# Speed-installs NPM modules.
 alias bi='bun i'
-# Updates all Node.js modules.
+# Updates all NPM modules.
 alias bu='bun update'
 # Runs a defined `package.json` script.
 alias br='bun run'
