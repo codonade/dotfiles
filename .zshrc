@@ -50,7 +50,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # FNM: Fast and simple Node.js version manager, built in Rust.
-export PATH="/home/codonade/.local/share/fnm:$PATH"
+export PATH="/home/codonade/.cargo/bin/fnm:$PATH"
 eval "`fnm env`"
 
 # Creates a directory.
@@ -66,7 +66,6 @@ alias rd='rm -rf'
 
 # Marks a file (usually a script) as executable.
 alias xu='chmod +x'
-
 # Launches Neovim text editor.
 alias nv='nvim'
 
