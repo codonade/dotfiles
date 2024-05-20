@@ -102,3 +102,14 @@ alias cr='cargo run'
 alias cf='cargo fmt'
 # Compiles Rust documentation.
 alias co='cargo doc'
+
+# Updates Bun to latest version.
+alias bl='bun upgrade'
+# Auto-installs and runs JS packages.
+alias bx='bunx'
+# Speed-installs Node.js modules.
+alias bi='bun i'
+# Updates all Node.js modules.
+alias bu='bun update'
+# Runs a defined `package.json` script.
+alias br='bun run'
