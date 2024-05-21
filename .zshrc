@@ -86,7 +86,7 @@ alias gp='git push'
 # Stages, commits, and pushes all Git changes.
 alias gg='ga && gc && gp'
 # WARN: Forces a Git branch push.
-alias gf='git push --force'
+alias gf='gp --force'
 # WARN: Renames the last Git commit.
 alias gb='git rebase -i HEAD~1 && git push --force'
 # Logs all Git commits.
@@ -115,3 +115,5 @@ alias bi='bun i'
 alias bu='bun update'
 # Runs a defined `package.json` script.
 alias br='bun run'
+# Runs `package.json dev` script.
+alias bd='br dev`
