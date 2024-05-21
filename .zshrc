@@ -116,4 +116,4 @@ alias bu='bun update'
 # Runs a defined `package.json` script.
 alias br='bun run'
 # Runs `package.json dev` script.
-alias bd='br dev`
+alias bd='br dev'
