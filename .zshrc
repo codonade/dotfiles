@@ -111,6 +111,8 @@ alias bl='bun upgrade'
 alias bx='bunx'
 # Speed-installs NPM modules.
 alias bi='bun i'
+# Adds an NPM module.
+alias ba='bun add'
 # Updates all NPM modules.
 alias bu='bun update'
 # Runs a defined `package.json` script.
