@@ -109,6 +109,8 @@ alias co='cargo doc'
 alias bl='bun upgrade'
 # Auto-installs and runs JS packages.
 alias bx='bunx'
+# Creates a new JS application from a template.
+alias bc='bun create'
 # Speed-installs NPM modules.
 alias bi='bun i'
 # Adds an NPM module.
