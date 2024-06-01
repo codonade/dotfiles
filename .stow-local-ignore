@@ -1,0 +1,13 @@
+# Ignores Git stuff.
+.git
+.gitignore
+.gitmodules
+
+# Ignores repository stuff.
+README.md
+
+# Ignores Next.js configuration.
+nextjs-nodejs
+# Ignores Turborepo configuration.
+configstore
+turborepo

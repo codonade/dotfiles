@@ -2,7 +2,7 @@
 # Doesn't insert a blank line between shell prompts.
 add_newline = false
 # WARN: Only include what is specified (A.K.A. configured) below.
-format = '$username$directory$git_branch$git_status$rust$package$cmd_duration'
+format = '$username$directory$git_branch$git_status$rust$cmd_duration'
 
 [username]
 style_root = 'fg:bright-red'
@@ -43,10 +43,6 @@ deleted = ' 😵'
 [rust]
 format = "[$symbol($version)]($style) "
 style = "fg:bold red"
-# NOTE: Use non-bright colors to distinguish.
-[package]
-format = "[$symbol$version]($style) "
-style = "fg:bold yellow"
 
 [cmd_duration]
 format = "[$duration]($style) "
