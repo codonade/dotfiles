@@ -71,6 +71,8 @@ alias nv='nvim'
 
 # Initializes a new Git repository.
 alias gi='git init'
+# Checkout the `main` Git branch.
+alias gm='git checkout main'
 # Pulls the latest Git changes.
 alias gu='git pull'
 # Prints the current Git status.
