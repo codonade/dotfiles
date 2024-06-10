@@ -98,6 +98,9 @@ alias gd='rd .git'
 # Resets the Git history.
 alias gr='gd && gi'
 
+# Checkout the `main` Git branch and pulls the latest changes.
+alias gum='gm && gu'
+
 # Builds a Rust Cargo environment.
 alias cb='cargo build'
 # Runs a Rust Cargo environment.
