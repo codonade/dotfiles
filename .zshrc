@@ -126,3 +126,8 @@ alias bu='bun update'
 alias br='bun run'
 # Runs `package.json dev` script.
 alias bd='br dev'
+
+# Pushes the current schema to the local database.
+alias dbp='br db:push'
+# Inspects the local database.
+alias dbi='br db:inspect'
