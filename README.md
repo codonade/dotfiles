@@ -5,7 +5,7 @@ Personal configuration files for my Ubuntu setup.
 ## ✅ Requirements
 
 To follow through this README, you have to install a single dependency -
-[GNU Stow](https://www.gnu.org/software/stow/):
+[GNU Stow:](https://www.gnu.org/software/stow/)
 
 ```bash
 sudo apt update
