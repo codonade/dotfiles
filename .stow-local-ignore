@@ -5,9 +5,11 @@
 
 # Ignores repository stuff.
 README.md
+LICENSE.txt
 
 # Ignores Next.js configuration.
-nextjs-nodejs
+nextjs-nodejs/
+create-next-app-nodejs/
 # Ignores Turborepo configuration.
-configstore
-turborepo
+configstore/
+turborepo/
