@@ -127,6 +127,8 @@ alias br='bun run'
 # Runs `package.json dev` script.
 alias bd='br dev'
 
+# Speed-installs development NPM module.
+alias bad='ba -d'
 # Pushes the current schema to the local database.
 alias dbp='br db:push'
 # Inspects the local database.
