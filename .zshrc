@@ -48,6 +48,8 @@ source "$HOME/.cargo/env"
 eval "$(starship init zsh)"
 # Zoxide: A smarter cd command.
 eval "$(zoxide init zsh)"
+# Go: The Go programming language.
+export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 
 # FNM: Fast and simple Node.js version manager, built in Rust.
 export PATH="/home/codonade/.cargo/bin/fnm:$PATH"
