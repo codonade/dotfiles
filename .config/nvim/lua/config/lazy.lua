@@ -1,7 +1,5 @@
--- Imports CodonadeKeymap.
 local nap = require("codonade.keymap").nap
-
--- Bootstraps lazy.nvim, and installs it if it's not installed.
+-- Bootstrap Lazy, and installs it if it's not installed.
 ---@type string
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -16,9 +14,9 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 
--- Appends lazy.nvim to the Neovim's runtime path.
+-- Append Lazy to Neovim's runtime path.
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
--- Installs plugins defined in `plugins`
+-- Install what's defined in `plugins`.
 require("lazy").setup("plugins")
--- Opens lazy.nvim dashboard.
+-- Opens Lazy dashboard.
 nap("<Leader>ll", ":Lazy<Return>", "Lazy: Lazy")

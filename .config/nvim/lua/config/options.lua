@@ -1,51 +1,48 @@
--- Uses GUI colors in *supported* terminals.
+-- Use GUI colors in supported terminals.
 vim.opt.termguicolors = true
--- Magically makes Neovim responsive.
+-- Magically make Neovim responsive ;)
 vim.opt.updatetime = 50
 
--- Applies block cursor for very Vim mode.
+-- Apply block cursor for very Vim mode.
 vim.opt.guicursor = ""
--- Hides Vim modes display.
+-- Hide Vim modes display.
 vim.opt.showmode = false
 
--- Splits horizontally below.
+-- Split horizontally below.
 vim.opt.splitbelow = true
--- Splits vertically to the right.
+-- Split vertically to the right.
 vim.opt.splitright = true
 
--- Displays absolute line numbers.
-vim.opt.number = true
--- NOTE: `true` for relative lines.
-vim.opt.relativenumber = false
--- Always displays a single sign column.
+-- Disable absolute line numbers; Focus had its effects on me :)
+vim.opt.number = false
+-- Alway displays a single sign column.
 vim.opt.signcolumn = "yes:1"
 
--- Indents using 2 spaces.
--- TODO: Override for some files.
+-- Indent using 2 spaces.
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
--- Enables advanced indentation.
+-- Enable advanced indentation.
 vim.opt.smartindent = true
--- "Is this a new line, or the same one?"
+-- Allow lines to exceed the screen width.
 vim.opt.wrap = false
 
--- Caps the maximum length for `popupmenu`
+-- Cap the maximum length for `popupmenu`.
 vim.opt.pumheight = 10
 
--- Highlights during and after search.
+-- Highlight during and after search.
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
--- Syncs the clipboard between OS and Neovim.
+-- Sync the clipboard between OS and Neovim.
 -- HMMM: Not working in WSL2 (Ubuntu)...
 vim.opt.clipboard = "unnamedplus"
 
--- Disables all kinds of history.
+-- Disable all kinds of file history.
 vim.opt.swapfile = false
 vim.opt.backup = false
--- TODO: Leverage undo files. 
+-- HMMM: Can undo files be actually useful?
 vim.opt.undofile = false
 vim.opt.undodir = ""

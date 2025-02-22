@@ -1,4 +1,4 @@
----Wrapper over `vim.keymap.set` API.
+---A wrapper over the `vim.keymap.set` API.
 ---@class CodonadeKeymap
 local M = {}
 
@@ -28,8 +28,6 @@ end
 ---@param opts table|nil Additional keymapping options.
 function M.map(mode, keys, func, desc, opts)
   opts = opts or {}
-
-  -- Maps the same sequence of keys for every specified mode.
   _ = mode:gsub(".", function(m)
     vim.keymap.set(m, keys, func, {
       desc = desc or "",

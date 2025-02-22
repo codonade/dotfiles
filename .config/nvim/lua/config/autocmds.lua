@@ -2,7 +2,6 @@
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlights yanked text.",
   group = vim.api.nvim_create_augroup("CodonadeHighlightYank", {
-    -- Resets commands when reloading.
     clear = true,
   }),
   callback = function()
@@ -11,7 +10,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 local indent_group = vim.api.nvim_create_augroup("CodonadeIndent", {
-  -- Resets commands when reloading.
   clear = true,
 })
 

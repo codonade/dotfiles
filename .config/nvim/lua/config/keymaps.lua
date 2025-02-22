@@ -1,9 +1,8 @@
--- Imports CodonadeKeymap.
 local nap = require("codonade.keymap").nap
 local map = require("codonade.keymap").map
 local vap = require("codonade.keymap").vap
 
--- Sets <Leader> key to <Space>
+-- Set <Leader> key to <Space>
 vim.g.mapleader = " "
 vim.g.mapleaderlocal = " "
 

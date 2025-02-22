@@ -1,4 +1,3 @@
--- Imports CodonadeKeymap.
 local nap = require("codonade.keymap").nap
 
 ---@type LazyConfig
@@ -8,28 +7,24 @@ return {{
     "nvim-lua/plenary.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
-      -- NOTE: Only ran when installed/updated.
-      -- WARN: On Ubuntu, requires `build-essential`
+      -- NOTE: This is only ran when installed/updated.
+      -- WARN: On Ubuntu, this requires the `build-essential` package.
       build = "make",
 
-      -- Only installs when `make` is installed.
+      -- Only install when `make` is installed.
       cond = function()
         return vim.fn.executable("make") == 1
       end,
     },
-    -- WARN: Requires having a Nerd Font.
+    -- WARN: Requires using a Nerd Font in the terminal.
     "nvim-tree/nvim-web-devicons",
-    -- WARN: Overrides default `vim.ui.select`
+    -- WARN: Overrides the default `vim.ui.select`.
     "nvim-telescope/telescope-ui-select.nvim",
   },
 
-  -- Setups Telescope with configured `opts`
   config = function(_, opts)
-    local pickers = require("telescope.builtin")
-    -- NOTE: Wraps `setup` here to allow for customizing keymaps.
     require("telescope").setup(opts)
-
-    -- Configures Telescope's keymaps.
+    local pickers = require("telescope.builtin")
     nap("<Leader>fh", pickers.help_tags, "Find: Help")
     nap("<Leader>fk", pickers.keymaps, "Find: Keymaps")
     nap("<Leader>ff", pickers.find_files, "Find: Files")
