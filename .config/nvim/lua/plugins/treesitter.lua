@@ -8,7 +8,7 @@ return {{
       "vim", "vimdoc", "lua",
       "bash", "tmux", "yaml", "toml",
       "gitignore", "gitcommit", "gitattributes",
-      "rust", "c", "cpp",
+      "c", "cpp", "python", "rust",
     },
     highlight = {
       enable = true,

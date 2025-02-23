@@ -1,6 +1,5 @@
 local nap = require("codonade.keymap").nap
 
----@type LazyConfig
 return {{
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -74,8 +73,9 @@ return {{
     ---@type table
     local servers = {
       lua_ls = {},
-      rust_analyzer = {},
       clangd = {},
+      pyright = {},
+      rust_analyzer = {},
     }
 
     ---@type string[]
@@ -89,6 +89,7 @@ return {{
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = server_names,
+      automatic_installation = false,
       handlers = {
         ---@param sn string Server name to handle.
         function(sn)

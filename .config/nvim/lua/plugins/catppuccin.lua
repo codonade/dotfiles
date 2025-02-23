@@ -1,4 +1,3 @@
----@type LazyConfig
 return {{
   "catppuccin/nvim", name = "catppuccin",
   -- Ensure Catppuccin loads before other plugins.
