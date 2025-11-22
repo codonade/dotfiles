@@ -1,60 +1,59 @@
-# DOCS: https://gist.github.com/mgedmin/2762225 (Xterm Colors)
-
-# Loads and initializes the completion engine.
+# - load and initializes the completion engine.
 autoload -Uz compinit
 compinit
 
-# Saves history to a HOME file, ignoring duplicates.
+# - save history to a HOME file, ignoring duplicates.
 setopt histignorealldups sharehistory
 HISTFILE='/home/codonade/.zshistory'
-# Limits the history capacity to 1000 lines.
+# - limit the history capacity to 1000 lines.
 HISTSIZE=1000
 SAVEHIST=1000
 
-# Zap: A minimal Zsh plugin manager.
+# ~ Zap
 [ -f "$HOME/.local/share/zap/zap.zsh" ]
 source "$HOME/.local/share/zap/zap.zsh"
 
-# Zsh Syntax Highlighting: Fish shell like syntax highlighting for Zsh.
+# ~ Zsh Syntax Highlighting
 # NOTE: Intentionally mimics Microsoft's Cambell colorscheme.
 plug 'zsh-users/zsh-syntax-highlighting'
-# Highlights commands with Bright Yellow, even if they're unknown.
+# - highlight commands with Bright Yellow, even if they're unknown.
 ZSH_HIGHLIGHT_STYLES[command]='fg=011'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=011'
 ZSH_HIGHLIGHT_STYLES[function]='fg=011'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=011'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=011'
-# Highlights strings with Cyan.
+# - highlight strings with cyan.
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=006'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=006'
 ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=006'
 ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=006'
-# Highlights options with Bright Gray.
+# - highlight options with bright gray.
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=008'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=008'
-# Removes the underlines from paths.
+# - remove the underlines from paths.
 ZSH_HIGHLIGHT_STYLES[path]='underline'
 
-# Zsh Autosuggestions: Fish-like autosuggestions for Zsh.
+# ~ Zsh Autosuggestions
 plug "zsh-users/zsh-autosuggestions"
-# Highlights suggestions with Bright Gray.
+# - highlight suggestions with bright gray.
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=008"
 
-# Neovim: Vim-fork focused on extensibility and usability.
+# ~ Neovim
 export PATH="/usr/local/bin/nvim/bin:$PATH"
-# Rust: Empowering everyone to build reliable and efficient software.
+# ~ Rust
 source "$HOME/.cargo/env"
-# Starship: The minimal, blazing-fast, and infinitely customizable prompt!
+# ~ Starship
 eval "$(starship init zsh)"
-# Zoxide: A smarter cd command.
+# ~ Zoxide
 eval "$(zoxide init zsh)"
-# Go: The Go programming language.
+# ~ Go
 export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 
-# FNM: Fast and simple Node.js version manager, built in Rust.
+# ~ FNM
 export PATH="/home/codonade/.cargo/bin/fnm:$PATH"
 eval "`fnm env`"
 
+# ~ Unix
 # Creates a directory.
 alias md='mkdir'
 # Changes the current directory through Zoxide.
@@ -65,18 +64,22 @@ alias cu='cd ..'
 alias ll='ls -Al'
 # Deletes a directory with all of its contents, recursively.
 alias rd='rm -rf'
-
 # Marks a file (usually a script) as executable.
 alias xu='chmod +x'
+
+# ~ Neovim
 # Launches Neovim text editor.
 alias nv='nvim'
 
+# ~ Git
 # Initializes a new Git repository.
 alias gi='git init'
 # Checkout the `main` Git branch.
 alias gm='git checkout main'
 # Pulls the latest Git changes.
 alias gu='git pull'
+# Checks-out the `main` Git branch and pulls the latest changes.
+alias gum='git checkout main && git pull'
 # Prints the current Git status.
 alias gs='git status'
 # Prints the difference.
@@ -100,9 +103,7 @@ alias gd='rd .git'
 # Resets the Git history.
 alias gr='gd && gi'
 
-# Checkout the `main` Git branch and pulls the latest changes.
-alias gum='gm && gu'
-
+# ~ Rust & Cargo
 # Builds a Rust Cargo environment.
 alias cb='cargo build'
 # Runs a Rust Cargo environment.
@@ -112,6 +113,7 @@ alias cf='cargo fmt'
 # Compiles Rust documentation.
 alias co='cargo doc'
 
+# ~ PNPM
 # Auto-installs and runs JS packages.
 alias px='pnpm dlx'
 # Creates a new JS application from a template.
