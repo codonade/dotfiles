@@ -53,6 +53,13 @@ export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 export PATH="/home/codonade/.cargo/bin/fnm:$PATH"
 eval "`fnm env`"
 
+# ~ PNPM
+export PNPM_HOME="/home/codonade/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 # ~ Unix
 # Creates a directory.
 alias md='mkdir'
@@ -130,4 +137,3 @@ alias pu='pnpm update'
 alias pr='pnpm run'
 # Runs the `package.json` `dev` script.
 alias pd='pnpm run dev'
-
