@@ -112,26 +112,20 @@ alias cf='cargo fmt'
 # Compiles Rust documentation.
 alias co='cargo doc'
 
-# Updates Bun to latest version.
-alias bl='bun upgrade'
 # Auto-installs and runs JS packages.
-alias bx='bunx'
+alias px='pnpm dlx'
 # Creates a new JS application from a template.
-alias bc='bun create'
-# Speed-installs NPM modules.
-alias bi='bun i'
-# Adds an NPM module.
-alias ba='bun add'
-# Updates all NPM modules.
-alias bu='bun update'
-# Runs a defined `package.json` script.
-alias br='bun run'
-# Runs `package.json dev` script.
-alias bd='br dev'
+alias pc='pnpm create'
+# Installs all `package.json` packages.
+alias pi='pnpm install'
+# Adds a JS package to local `dependencies`
+alias pa='pnpm add'
+# Adds a JS package to local `devDependencies`
+alias pad='pnpm add -D'
+# Updates all JS packages.
+alias pu='pnpm update'
+# Runs a `package.json` script.
+alias pr='pnpm run'
+# Runs the `package.json` `dev` script.
+alias pd='pnpm run dev'
 
-# Speed-installs development NPM module.
-alias bad='ba -d'
-# Pushes the current schema to the local database.
-alias dbp='br db:push'
-# Inspects the local database.
-alias dbi='br db:inspect'

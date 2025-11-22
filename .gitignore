@@ -1,3 +1,6 @@
-# Ignores Next.js configuration.
+# - ignore VS Code configuration.
+Code/
+
+# - ignore Next.js configuration.
 nextjs-nodejs/
 create-next-app-nodejs/
