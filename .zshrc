@@ -1,4 +1,4 @@
-# - load and initializes the completion engine.
+# - load and initialize the completion engine.
 autoload -Uz compinit
 compinit
 
@@ -38,6 +38,10 @@ plug "zsh-users/zsh-autosuggestions"
 # - highlight suggestions with bright gray.
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=008"
 
+################################################################################
+## Applications ################################################################
+################################################################################
+
 # ~ Neovim
 export PATH="/usr/local/bin/nvim/bin:$PATH"
 # ~ Rust
@@ -46,8 +50,6 @@ source "$HOME/.cargo/env"
 eval "$(starship init zsh)"
 # ~ Zoxide
 eval "$(zoxide init zsh)"
-# ~ Go
-export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 
 # ~ FNM
 export PATH="/home/codonade/.cargo/bin/fnm:$PATH"
@@ -59,6 +61,10 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+################################################################################
+## Aliases #####################################################################
+################################################################################
 
 # ~ Unix
 # Creates a directory.
@@ -98,42 +104,15 @@ alias gc='git commit'
 # Pushes a Git branch.
 alias gp='git push'
 # Stages, commits, and pushes all Git changes.
-alias gg='ga && gc && gp'
+alias gg='git add -A && git commit && git push'
 # WARN: Forces a Git branch push.
-alias gf='gp --force'
-# WARN: Renames the last Git commit.
+alias gf='git push --force'
+# WARN: Changes the last Git commit message.
 alias gb='git rebase -i HEAD~1 && git push --force'
 # Logs all Git commits.
 alias gl='git log'
 # Removes the whole Git history.
 alias gd='rd .git'
 # Resets the Git history.
-alias gr='gd && gi'
+alias gr='rd .git && git init'
 
-# ~ Rust & Cargo
-# Builds a Rust Cargo environment.
-alias cb='cargo build'
-# Runs a Rust Cargo environment.
-alias cr='cargo run'
-# Formats Rust code with Cargo Format.
-alias cf='cargo fmt'
-# Compiles Rust documentation.
-alias co='cargo doc'
-
-# ~ PNPM
-# Auto-installs and runs JS packages.
-alias px='pnpm dlx'
-# Creates a new JS application from a template.
-alias pc='pnpm create'
-# Installs all `package.json` packages.
-alias pi='pnpm install'
-# Adds a JS package to local `dependencies`
-alias pa='pnpm add'
-# Adds a JS package to local `devDependencies`
-alias pad='pnpm add -D'
-# Updates all JS packages.
-alias pu='pnpm update'
-# Runs a `package.json` script.
-alias pr='pnpm run'
-# Runs the `package.json` `dev` script.
-alias pd='pnpm run dev'
