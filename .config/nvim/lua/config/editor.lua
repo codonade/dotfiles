@@ -1,2 +1,2 @@
--- TODO: Have different statuslines for inactive windows.
+-- TODO: Create different statuslines for inactive windows.
 vim.opt.statusline = "%t %= %l:%c"

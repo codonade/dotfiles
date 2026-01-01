@@ -48,7 +48,7 @@ return {{
         ---@param desc string Description of the keymap.
         local function map(keys, func, desc)
           nap(keys, func, "LSP: " .. desc, {
-              buffer = event.buf,
+            buffer = event.buf,
           })
         end
 
@@ -73,15 +73,19 @@ return {{
     ---@type table
     local servers = {
       lua_ls = {},
-      clangd = {},
+      jsonls = {},
+      eslint = {},
+      ts_ls = {},
+      tailwindcss = {},
       pyright = {},
+      clangd = {},
       rust_analyzer = {},
     }
 
     ---@type string[]
     local server_names =
-      -- WARN: All the keys should be `strings`.
-      require("codonade.utils").keys(servers)
+    -- WARN: All the keys should be `strings`.
+    require("codonade.utils").keys(servers)
     ---@type lspconfig.Config
     local lspconfig = require("lspconfig")
 

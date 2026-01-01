@@ -2,7 +2,7 @@ local nap = require("codonade.keymap").nap
 local map = require("codonade.keymap").map
 local vap = require("codonade.keymap").vap
 
--- Set <Leader> key to <Space>
+-- set <Leader> key to <Space>
 vim.g.mapleader = " "
 vim.g.mapleaderlocal = " "
 
@@ -29,12 +29,12 @@ nap("<Leader>wa", "<C-w>o", "Split: Quit All")
 nap("<Leader><Tab>", ":bnext<Return>", "Buffer: Next")
 -- HMMM: Why Neovim used `previous` hear, not `prev`?
 nap("<Leader><S-Tab>", ":bprevious<Return>", "Buffer: Prev")
--- Delets the current buffer.
+-- Deletes the current buffer.
 nap("<Leader>bd", ":bd<Return>", "Buffer: Delete")
 
--- Increments current number.
+-- Increments the number under cursor.
 map("nx", "+", "<C-a>", "Number: Increment");
--- Decrements current number.
+-- Decrements the number under cursor.
 map("nx", "-", "<C-x>", "Number: Decrement");
 
 -- Goes to the end of the line.
@@ -52,23 +52,6 @@ nap("<A-k>", ":m .-2<Return>==", "Line: Move up")
 vap("<A-j>", ":m '>+1<cr>gv=gv", "Selection: Move down" )
 -- Moves selection below, and indents it.
 vap("<A-k>", ":m '<-2<cr>gv=gv", "Selection: Move up")
-
--- Pastes without copying selection to register.
-vap("<Leader>p", '"_dP', "Selection: Paste (_)")
--- Deletes without copying to register.
-map("nx", "<Leader>d", '"_d', "Delete (_)")
--- Crops without copying to register.
-map("nx", "<Leader>c", '"_c', "Crop (_)")
--- Crops to end of line without copying to register.
-nap("<Leader>C", '"_C', "Line: Crop to End (_)")
--- Crops line without copying to register.
-nap("<Leader>S", '"_S', "Line: Crop (_)")
--- Deletes character without copying to register.
-map("nx", "<Leader>x", '"_x', "Character: Delete (_)")
--- Deletes previous character without copying to register.
-nap("<Leader>X", '"_X', "Character: Delete Prev (_)")
--- Crops character without copying to register.
-map("nx", "<Leader>s", '"_s', "Character: Crop (_)")
 
 -- Selects the whole file.
 nap("<C-a>", "ggVG$h", "File: Select")

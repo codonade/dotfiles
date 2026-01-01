@@ -1,11 +1,11 @@
 return {{
   "catppuccin/nvim", name = "catppuccin",
-  -- Ensure Catppuccin loads before other plugins.
+  -- ensure Catppuccin loads before other plugins.
   priority = 1000,
 
   opts = {
     flavour = "mocha",
-    -- Mimic transparency, while letting windows and menus be colored.
+    -- mimic transparency, while letting windows and menus be colored.
     color_overrides = {
       mocha = {
         -- WARN: Comes from the terminal background color.
@@ -13,7 +13,7 @@ return {{
       },
     },
 
-    -- Support additional plugins.
+    -- support additional plugins.
     integrations = {
       fidget = true,
       mini = {
@@ -23,7 +23,7 @@ return {{
     },
   },
 
-  -- Set Catppuccin as the colorscheme on startup.
+  -- set Catppuccin as the colorscheme on startup.
   init = function()
     vim.cmd.colorscheme("catppuccin")
   end,

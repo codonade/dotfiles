@@ -1,13 +1,14 @@
 return {{
   "nvim-treesitter/nvim-treesitter",
-  -- Update all installed parsers to the latest version.
+  -- updates all installed parsers to the latest version.
   build = ":TSUpdate",
 
   opts = {
     ensure_installed = {
       "vim", "vimdoc", "lua",
-      "bash", "tmux", "yaml", "toml",
+      "bash", "tmux", "json", "yaml", "toml",
       "gitignore", "gitcommit", "gitattributes",
+      "javascript", "typescript",
       "c", "cpp", "python", "rust",
     },
     highlight = {

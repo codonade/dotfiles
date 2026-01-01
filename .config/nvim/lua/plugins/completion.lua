@@ -6,7 +6,7 @@ return {{
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
 
-      -- Enable regular expressions in snippets.
+      -- enable regular expressions in snippets.
       build = (function()
         -- WARN: Not supported in many Windows environments.
         if not (vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0) then

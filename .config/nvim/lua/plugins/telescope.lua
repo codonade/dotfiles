@@ -10,7 +10,7 @@ return {{
       -- WARN: On Ubuntu, this requires the `build-essential` package.
       build = "make",
 
-      -- Only install when `make` is installed.
+      -- only install when `make` is installed.
       cond = function()
         return vim.fn.executable("make") == 1
       end,
