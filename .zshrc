@@ -116,3 +116,18 @@ alias gd='rd .git'
 # Resets the Git history.
 alias gr='rd .git && git init'
 
+# ~ Bun
+# Executes an NPM package.
+alias bx='bunx'
+# Creates a new JS application from a template.
+alias bc='bun create'
+# Installs all project dependencies.
+alias bi='bun i'
+# Add an NPM module.
+alias ba='bun add'
+# Updates an NPM module.
+alias bu='bun update'
+# Runs a `package.json` script.
+alias br='bun run'
+# Runs `package.json dev` script.
+alias bd='bun run dev'
