@@ -1,15 +1,14 @@
-# Ignores Git stuff.
+# ~ External
+nextjs-nodejs/
+create-next-app-nodejs/
+configstore/
+turborepo/
+
+# ~ Git
 .git
 .gitignore
 .gitmodules
 
-# Ignores repository stuff.
+# ~ GitHub
 README.md
 LICENSE.txt
-
-# Ignores Next.js configuration.
-nextjs-nodejs/
-create-next-app-nodejs/
-# Ignores Turborepo configuration.
-configstore/
-turborepo/
