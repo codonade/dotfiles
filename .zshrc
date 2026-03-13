@@ -55,9 +55,6 @@ eval "$(zoxide init zsh)"
 export PATH="/home/codonade/.cargo/bin/fnm:$PATH"
 eval "`fnm env`"
 
-# Vite+
-source "$HOME/.vite-plus/env"
-
 # ~ PNPM
 export PNPM_HOME="/home/codonade/.local/share/pnpm"
 case ":$PATH:" in
@@ -134,6 +131,3 @@ alias bu='bun update'
 alias br='bun run'
 # Runs `package.json dev` script.
 alias bd='bun run dev'
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
