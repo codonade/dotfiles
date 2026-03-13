@@ -1,6 +1,4 @@
-# - ignore VS Code configuration.
-Code/
-
-# - ignore Next.js configuration.
-nextjs-nodejs/
-create-next-app-nodejs/
+Code
+nextjs-nodejs
+create-next-app-nodejs
+turborepo
